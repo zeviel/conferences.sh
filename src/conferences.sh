@@ -5,6 +5,7 @@ sign=null
 vk_user_id=null
 vk_ts=null
 vk_ref=null
+user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 
 function authenticate() {
 	# 1 - sign: (string): <sign>
@@ -28,7 +29,7 @@ function authenticate() {
 function get_conferences_rating() {
 	curl --request GET \
 		--url "$api/rating" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -37,7 +38,7 @@ function get_conference_by_id() {
 	# 1 - conference_id: (integer): <conference_id>
 	curl --request GET \
 		--url "$api/getByID?id=$1" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -46,7 +47,7 @@ function like_conferece() {
 	# 1 - conference_id: (integer): <conference_id>
 	curl --request GET \
 		--url "$api/like?id=$1" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -54,7 +55,7 @@ function like_conferece() {
 function get_notifications() {
 	curl --request GET \
 		--url "$api/getNotifications" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -62,7 +63,7 @@ function get_notifications() {
 function get_conferences() {
 	curl --request GET \
 		--url "$api/getConferences" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -71,7 +72,7 @@ function get_conferences() {
 function get_likes() {
 	curl --request GET \
 		--url "$api/getLikes" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
@@ -85,7 +86,7 @@ function add_conference() {
 	# 6 - link: (string): <link>
 	curl --request GET \
 		--url "$api/add?category=$1&title=$2&shortDescription=$3&description=$4&rules=$5&link=$6" \
-		--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36" \
+		--user-agent "$user_agent" \
 		--header "content-type: application/json" \
 		--header "xvk: $params"
 }
